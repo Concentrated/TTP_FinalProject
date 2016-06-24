@@ -1,0 +1,29 @@
+{{#if info}}
+<div id='weather'>
+
+	<div class='line-break'></div>
+
+	{{#if temp}}<h2 id='avgTemp'>Today's : Low: {{temp.low}} - High: {{temp.high}}</h2>{{/if}}
+
+	{{#each info}}
+		<div class='wrapper'>
+
+			<div class='left'>
+				<div class='time'>{{this.DateTime}}</div>
+			</div>
+
+			<div class='right'>
+				<div class='top'>
+					<div class='condition'>{{this.IconPhrase}}</div>
+					<div class='temperature'>{{this.Temperature.Value}} {{this.Temperature.Unit}}</div>
+				</div>
+
+				<div class='bottom'>
+					<div id='rain'>{{this.PrecipitationProbability}}% Chance to Rain</div>
+				</div>
+			</div>
+
+		</div>
+	{{/each}}
+</div>
+{{/if}}
